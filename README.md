@@ -8,6 +8,14 @@ The test will be about a simple **crud operations** on a **todos list**, the app
 
 [the design](https://www.figma.com/file/mtltCozpNqhL7x3lBv5uGq/%E2%9C%85--To-Do-List-(Community)?node-id=2%3A490)
 
+## **_Describe The App_**
+
+- You should be able to drag and drop a task from a column to another, and thats will change it's status.
+- Clicking the three-dots on any task bring the actions menu that include these two options: edit and delete.
+- After clicking on edit action, it will bring an edit module that give the user accessability to edit the task title & description.
+- Also, it should be clear that clicking on delete option will delete the task permanently.
+- Clicking on a task title will navigate you to the detailed page of this task, you should insure the title of the task is a hyperlink.
+
 ## **_The Rules_**
 
 - Create this application using `ReactJs` and `NextJs`.
