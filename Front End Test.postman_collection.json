@@ -1,0 +1,299 @@
+{
+	"info": {
+		"_postman_id": "6120f56c-e101-4a91-ac0d-c7793b692240",
+		"name": "Front End Test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Docs",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}?key={{test-key}}",
+					"host": [
+						"{{url}}"
+					],
+					"query": [
+						{
+							"key": "key",
+							"value": "{{test-key}}"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Docs",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}?key={{test-key}}",
+							"host": [
+								"{{url}}"
+							],
+							"query": [
+								{
+									"key": "key",
+									"value": "{{test-key}}"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "html",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Cowboy"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "6600"
+						},
+						{
+							"key": "Etag",
+							"value": "W/\"19c8-kywnRsYsvZbPuqHPS3f2ezMHd78\""
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 05 Jan 2022 07:00:26 GMT"
+						},
+						{
+							"key": "Via",
+							"value": "1.1 vegur"
+						}
+					],
+					"cookie": [],
+					"body": "<h1 id=\"-scandinavia-front-end-test-\">\n    <strong>Scandinavia Front-End Test</strong>\n</h1>\n<p>At first, I hope you are doing well.</p>\n<p>This test is to preview the clean code and how useful you will be to our team.</p>\n<p>The test will be about a simple \n    <strong>crud operations</strong> on a\n    <strong>todos list</strong>, the application contains home page that contains the main todos list we want and another page to show a single todo.\n</p>\n<p>\n    <a href=\"https://www.figma.com/file/mtltCozpNqhL7x3lBv5uGq/%E2%9C%85--To-Do-List-(Community)?node-id=2%3A490\">the design</a>\n</p>\n<h2 id=\"-_the-rules_-\">\n    <strong>\n        <em>The Rules</em>\n    </strong>\n</h2>\n<ul>\n    <li>Create this application using \n        <code>ReactJs</code> and\n        <code>NextJs</code>.\n    </li>\n    <li>Link the application to a public repository on github.</li>\n    <li>Organize your repository commits, pushes and branches because it all maters, so organize your work on the git.</li>\n    <li>\n        <code>Axios</code>,\n        <code>React Query</code> and\n        <code>Material UI</code> is required libraries to use and any other libraries is optional.\n    </li>\n    <li>Every page should have at least \n        <code>title</code> and\n        <code>description</code> meta tags for better SEO.\n    </li>\n    <li>Build the same UI showed in the design link by following the same design system.</li>\n    <li>Any action performed in the application (create todo, update todo, ...) need to be synced with the backend.</li>\n</ul>\n<hr>\n<h2 id=\"-_the-api_-\">\n    <strong>\n        <em>The API</em>\n    </strong>\n</h2>\n<p>Here we describe the \n    <strong>\n        <em>API</em>\n    </strong> that you should communicate with to achieve the goal of the test.\n</p>\n<p>\n    <strong>IMPORTANT</strong>: for each request, you should send a query param\n    <code>key</code> and you&#39;ll receive its value in your test email.\n</p>\n<p>\n    <strong>IMPORTANT</strong>: The base url for the backend is\n    <a href=\"https://front-end-todo-test.herokuapp.com\">https://front-end-todo-test.herokuapp.com</a>, so list todos link will be like\n    <a href=\"https://front-end-todo-test.herokuapp.com/todos\">https://front-end-todo-test.herokuapp.com/todos</a> and so on.\n</p>\n<ul>\n    <li>\n        <p>list the todos</p>\n        <pre>\n            <code>\n                <span class=\"hljs-symbol\">GET:</span> /todo\n            </code>\n        </pre>\n        <p>the result:</p>\n        <pre>\n            <code class=\"lang-ts\">\n                <span class=\"hljs-keyword\">type</span> ListTodoResponse = {\n  _id:\n                <span class=\"hljs-keyword\">string</span>;\n  title:\n                <span class=\"hljs-keyword\">string</span>;\n  subject:\n                <span class=\"hljs-keyword\">string</span>;\n  status:\n                <span class=\"hljs-string\">'todo'</span> |\n                <span class=\"hljs-string\">'doing'</span> |\n                <span class=\"hljs-string\">'done'</span> |\n                <span class=\"hljs-string\">'archive'</span>;\n}[];\n            </code>\n        </pre>\n        <hr>\n    </li>\n    <li>\n        <p>create a todo</p>\n        <pre>\n            <code>\n                <span class=\"hljs-symbol\">POST:</span> /todo\n            </code>\n        </pre>\n        <p>you should send the new todo in the request body:</p>\n        <pre>\n            <code class=\"lang-ts\">\n                <span class=\"hljs-built_in\">type</span> CreateTodoDto = {\n                <span class=\"hljs-built_in\">title</span>:\n                <span class=\"hljs-keyword\">string</span>;\n  subject:\n                <span class=\"hljs-keyword\">string</span>;\n};\n            </code>\n        </pre>\n        <p>the result is the new todo:</p>\n        <pre>\n            <code class=\"lang-ts\">\n                <span class=\"hljs-keyword\">type</span> CreateTodoResponse = {\n  _id:\n                <span class=\"hljs-keyword\">string</span>;\n  title:\n                <span class=\"hljs-keyword\">string</span>;\n  subject:\n                <span class=\"hljs-keyword\">string</span>;\n  status:\n                <span class=\"hljs-string\">'todo'</span> |\n                <span class=\"hljs-string\">'doing'</span> |\n                <span class=\"hljs-string\">'done'</span> |\n                <span class=\"hljs-string\">'archive'</span>;\n};\n            </code>\n        </pre>\n        <hr>\n    </li>\n    <li>\n        <p>get a todo</p>\n        <pre>\n            <code>\n                <span class=\"hljs-symbol\">GET:</span>\n                <span class=\"hljs-meta-keyword\">/todo/</span>:id\n            </code>\n        </pre>\n        <p>you should pass the id of the todo that you want to get in the request query params.</p>\n        <p>the result is the requested todo:</p>\n        <pre>\n            <code class=\"lang-ts\">\n                <span class=\"hljs-keyword\">type</span> GetTodoResponse = {\n  _id:\n                <span class=\"hljs-keyword\">string</span>;\n  title:\n                <span class=\"hljs-keyword\">string</span>;\n  subject:\n                <span class=\"hljs-keyword\">string</span>;\n  status:\n                <span class=\"hljs-string\">'todo'</span> |\n                <span class=\"hljs-string\">'doing'</span> |\n                <span class=\"hljs-string\">'done'</span> |\n                <span class=\"hljs-string\">'archive'</span>;\n};\n            </code>\n        </pre>\n        <hr>\n    </li>\n    <li>\n        <p>update a todo</p>\n        <pre>\n            <code>\n                <span class=\"hljs-symbol\">PATCH:</span>\n                <span class=\"hljs-meta-keyword\">/todo/</span>:id\n            </code>\n        </pre>\n        <p>you should pass the id of the todo that you want to update in the request query params.</p>\n        <p>and you should send the updated todo in the request body:</p>\n        <pre>\n            <code class=\"lang-ts\">\n                <span class=\"hljs-keyword\">type</span> UpdateTodoDto = {\n  title?:\n                <span class=\"hljs-keyword\">string</span>;\n  subject?:\n                <span class=\"hljs-keyword\">string</span>;\n  status?:\n                <span class=\"hljs-string\">'todo'</span> |\n                <span class=\"hljs-string\">'doing'</span> |\n                <span class=\"hljs-string\">'done'</span> |\n                <span class=\"hljs-string\">'archive'</span>;\n};\n            </code>\n        </pre>\n        <p>the result is the updated todo:</p>\n        <pre>\n            <code class=\"lang-ts\">\n                <span class=\"hljs-keyword\">type</span> UpdateTodoResponse = {\n  _id:\n                <span class=\"hljs-keyword\">string</span>;\n  title:\n                <span class=\"hljs-keyword\">string</span>;\n  subject:\n                <span class=\"hljs-keyword\">string</span>;\n  status:\n                <span class=\"hljs-string\">'todo'</span> |\n                <span class=\"hljs-string\">'doing'</span> |\n                <span class=\"hljs-string\">'done'</span> |\n                <span class=\"hljs-string\">'archive'</span>;\n};\n            </code>\n        </pre>\n        <hr>\n    </li>\n    <li>\n        <p>delete a todo</p>\n        <pre>\n            <code>\n                <span class=\"hljs-string\">DELETE:</span> /\n                <span class=\"hljs-string\">todo:</span>id\n            </code>\n        </pre>\n        <p>you should pass the id of the todo that you want to delete in the request query params.</p>\n        <p>the result is the deleted todo:</p>\n        <pre>\n            <code class=\"lang-ts\">\n                <span class=\"hljs-keyword\">type</span> DeleteTodoResponse = {\n  _id:\n                <span class=\"hljs-keyword\">string</span>;\n  title:\n                <span class=\"hljs-keyword\">string</span>;\n  subject:\n                <span class=\"hljs-keyword\">string</span>;\n  status:\n                <span class=\"hljs-string\">'todo'</span> |\n                <span class=\"hljs-string\">'doing'</span> |\n                <span class=\"hljs-string\">'done'</span> |\n                <span class=\"hljs-string\">'archive'</span>;\n};\n            </code>\n        </pre>\n    </li>\n</ul>\n<hr>\n<h2 id=\"-_the-point-system_-\">\n    <strong>\n        <em>The Point System</em>\n    </strong>\n</h2>\n<ol>\n    <li>Every break rule will reduce you test points</li>\n    <li>The application contains two pages:\n        <ol>\n            <li>\n                <code>/</code>: The homepage.\n            </li>\n            <li>\n                <code>/todos/[id]</code>: Task details.\n            </li>\n        </ol>\n    </li>\n    <li>Every change in application design not matching the base design will cost you test points.</li>\n    <li>Every change in application design that make the page better will grant you extra test points.</li>\n</ol>"
+				}
+			]
+		},
+		{
+			"name": "Get Many",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": []
+				},
+				"url": {
+					"raw": "{{url}}{{crud-slug}}?key={{test-key}}",
+					"host": [
+						"{{url}}{{crud-slug}}"
+					],
+					"query": [
+						{
+							"key": "key",
+							"value": "{{test-key}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get One",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}{{crud-slug}}/:id?key={{test-key}}",
+					"host": [
+						"{{url}}{{crud-slug}}"
+					],
+					"path": [
+						":id"
+					],
+					"query": [
+						{
+							"key": "key",
+							"value": "{{test-key}}"
+						}
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "id",
+							"description": "id of the todo"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create One",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "title",
+							"value": "string",
+							"description": "title of the todo",
+							"type": "text"
+						},
+						{
+							"key": "subject",
+							"value": "string",
+							"description": "subject of the todo",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url}}{{crud-slug}}?key={{test-key}}",
+					"host": [
+						"{{url}}{{crud-slug}}"
+					],
+					"query": [
+						{
+							"key": "key",
+							"value": "{{test-key}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update One",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "title",
+							"value": "string",
+							"description": "title of the todo",
+							"type": "text"
+						},
+						{
+							"key": "subject",
+							"value": "string",
+							"description": "subject of the todo",
+							"type": "text"
+						},
+						{
+							"key": "status",
+							"value": "string",
+							"description": "status of the todo, should be one of this statuses: 'todo' | 'doing' | 'done' | 'archive'",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{url}}{{crud-slug}}/:id?key={{test-key}}",
+					"host": [
+						"{{url}}{{crud-slug}}"
+					],
+					"path": [
+						":id"
+					],
+					"query": [
+						{
+							"key": "key",
+							"value": "{{test-key}}"
+						}
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "id",
+							"description": "id of the todo"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete One",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{url}}{{crud-slug}}/:id?key={{test-key}}",
+					"host": [
+						"{{url}}{{crud-slug}}"
+					],
+					"path": [
+						":id"
+					],
+					"query": [
+						{
+							"key": "key",
+							"value": "{{test-key}}"
+						}
+					],
+					"variable": [
+						{
+							"key": "id",
+							"value": "id",
+							"description": "id of the todo"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "https://front-end-todo-test.herokuapp.com/"
+		},
+		{
+			"key": "crud-slug",
+			"value": "todos"
+		},
+		{
+			"key": "test-key",
+			"value": "your testing key"
+		}
+	]
+}

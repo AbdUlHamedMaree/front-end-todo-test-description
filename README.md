@@ -6,13 +6,15 @@ This test is to preview the clean code and how useful you will be to our team.
 
 The test will be about a simple **crud operations** on a **todos list**, the application contains home page that contains the main todos list we want and another page to show a single todo.
 
+[the design](https://www.figma.com/file/mtltCozpNqhL7x3lBv5uGq/%E2%9C%85--To-Do-List-(Community)?node-id=2%3A490)
+
 ## **_The Rules_**
 
 - Create this application using `ReactJs` and `NextJs`.
 - Link the application to a public repository on github.
 - Organize your repository commits, pushes and branches because it all maters, so organize your work on the git.
 - `Axios`, `React Query` and `Material UI` is required libraries to use and any other libraries is optional.
-- every page should have at least `title` and `description` meta tags for better SEO.
+- Every page should have at least `title` and `description` meta tags for better SEO.
 - Build the same UI showed in the design link by following the same design system.
 - Any action performed in the application (create todo, update todo, ...) need to be synced with the backend.
 
@@ -20,9 +22,11 @@ The test will be about a simple **crud operations** on a **todos list**, the app
 
 ## **_The API_**
 
-Here we describe the **_API_** that you should communicate with to archive the goal of the test.
+Here we describe the **_API_** that you should communicate with to achieve the goal of the test.
 
-**IMPORTANT**: for each request you should send a query param named with `key` and the value will send to you in the email.
+**IMPORTANT**: for each request, you should send a query param `key` and you'll receive its value in your test email.
+
+**IMPORTANT**: The base url for the backend is <https://front-end-todo-test.herokuapp.com>, so list todos link will be like <https://front-end-todo-test.herokuapp.com/todos> and so on.
 
 - list the todos
 
@@ -142,9 +146,9 @@ Here we describe the **_API_** that you should communicate with to archive the g
 
 ## **_The Point System_**
 
-1. every break rule will reduce you test points
-2. the application contains two pages:
-   1. `/`: The home.
+1. Every break rule will reduce you test points
+2. The application contains two pages:
+   1. `/`: The homepage.
    2. `/todos/[id]`: Task details.
-3. every change in application design not matching the base design will reduce you test points.
-4. every change in application design that make the page better will increase your test points.
+3. Every change in application design not matching the base design will cost you test points.
+4. Every change in application design that make the page better will grant you extra test points.
